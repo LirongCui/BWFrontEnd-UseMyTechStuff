@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import React from 'react';
+import { Card, Button, CardTitle, CardText } from 'reactstrap';
+
+function App(props) {
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <div>testing</div>
+    <div>
+      <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+        <CardTitle tag="h5">Special Title Treatment</CardTitle>
+        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+        <Button>Button</Button>
+      </Card>
+      <Card body inverse color="primary">
+        <CardTitle tag="h5">Special Title Treatment</CardTitle>
+        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+        <Button color="secondary">Button</Button>
+      </Card>
+      <Card body inverse color="success">
+        <CardTitle tag="h5">Special Title Treatment</CardTitle>
+        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+        <Button color="secondary">Button</Button>
+      </Card>
+      <Card body inverse color="info">
+        <CardTitle tag="h5">Special Title Treatment</CardTitle>
+        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+        <Button color="secondary">Button</Button>
+      </Card>
+      <Card body inverse color="warning">
+        <CardTitle tag="h5">Special Title Treatment</CardTitle>
+        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+        <Button color="secondary">Button</Button>
+      </Card>
+      <Card body inverse color="danger">
+        <CardTitle tag="h5">Special Title Treatment</CardTitle>
+        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+        <Button color="secondary">Button</Button>
+      </Card>
     </div>
   );
 }
