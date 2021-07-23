@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import * as yup from 'yup'
 import { ButtonToggle, Form, FormGroup, Label, Input } from 'reactstrap'
 
+// Added props for reactstrap
 function LoginPage(props) {
 	//holds state for whole form
 	const [formState, setFormState] = useState({

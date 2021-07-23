@@ -1,10 +1,9 @@
-
 import './App.css';
 import React from 'react';
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 
 function Cards(props) {
-  
+    // Cards example for product view
 
   return (
     <div>
