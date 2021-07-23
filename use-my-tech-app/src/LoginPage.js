@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import * as yup from 'yup'
+import { ButtonToggle, Form, FormGroup, Label, Input } from 'reactstrap'
 
-
-function LoginPage() {
+function LoginPage(props) {
 	//holds state for whole form
 	const [formState, setFormState] = useState({
 		name: '',
@@ -74,64 +74,69 @@ function LoginPage() {
 
 	return (
 		<div>
-			<form onSubmit={formSubmit}>
-				<label htmlFor="name"> Name:
-					<input
+			<Form inline onSubmit={formSubmit}>
+				<FormGroup>
+					<Label htmlFor="name"> Name: </Label>
+					<Input
 						type="text"
 						name="name"
 						value={formState.name}
 						id="name"
 						onChange={onChangeHandle}
 						/>
-						{errors.name.length > 0 ? <p>{errors.name}</p> : null}
-						
-				</label>
-				<label htmlFor="email"> Email:
-					<input
+					{errors.name.length > 0 ? <p>{errors.name}</p> : null}
+				</FormGroup>
+				<FormGroup>
+					<Label htmlFor="email"> Email: </Label>
+					<Input
 						type="email"
 						name="email"
 						value={formState.email}
 						id="email"
 						onChange={onChangeHandle}
 					/>
-						{errors.email.length > 0 ? <p>{errors.email}</p> : null}
-						
-				</label>
-				<label htmlFor="password"> Password:
-					<input
-						type="password"
-						name="password"
-						value={formState.password}
-						id="password"
-						onChange={onChangeHandle}
-					/>
-						{errors.password.length > 0 ? <p>{errors.password}</p> : null}
-						
-				</label>
-				<label htmlFor="confirm"> ConfirmPassword:
-					<input
-						type="password"
-						name="confirm"
-						value={formState.confirm}
-						id="confirm"
-						onChange={onChangeHandle}
-					/>
-						{formState.confirm.match(formState.password) ? null : <p>{errors.confirm}</p>}
-						
-				</label>
-				<label htmlFor="terms"> Terms & Service:
-					<input
-						type="checkbox"
-						name="terms"
-						checked={formState.terms}
-						id="confirm"
-						onChange={onChangeHandle}
-					/>
-						
-						
-				</label>
-				<button type="submit" disabled={buttonDisabled}>Enroll</button>
-			</form>
+					{errors.email.length > 0 ? <p>{errors.email}</p> : null}
+					
+				</FormGroup>
+					<br></br>
+				<FormGroup>
+					<Label htmlFor="password"> Password:</Label>
+						<Input
+							type="password"
+							name="password"
+							value={formState.password}
+							id="password"
+							onChange={onChangeHandle}
+						/>
+							{errors.password.length > 0 ? <p>{errors.password}</p> : null}
+				</FormGroup>
+				<FormGroup>
+					<Label htmlFor="confirm"> Confirm Password:</Label>
+						<Input
+							type="password"
+							name="confirm"
+							value={formState.confirm}
+							id="confirm"
+							onChange={onChangeHandle}
+						/>
+							{formState.confirm.match(formState.password) ? null : <p>{errors.confirm}</p>}
+				</FormGroup>
+					<br></br>
+				<FormGroup>		
+					<Label htmlFor="terms"> Terms of Service:</Label>
+						<Input
+							type="checkbox"
+							name="terms"
+							checked={formState.terms}
+							id="confirm"
+							onChange={onChangeHandle}
+						/>
+				</FormGroup>
+					<br></br>
+				<FormGroup>
+					<ButtonToggle size='lg' color='primary' type="submit" disabled={buttonDisabled}>Enroll</ButtonToggle>
+				</FormGroup>
+			</Form>
 		</div>
 	)
 }
